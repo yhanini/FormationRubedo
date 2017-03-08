@@ -28,7 +28,34 @@ class FormationResource extends AbstractResource {
                             ->setKey('formations')
                             ->setRequired()
                     );
+            })->editVerb('post', function(VerbDefinitionEntity &$entity) {
+                $entity
+                    ->setDescription('Ajouter une formation')
+                    //->identityRequired()
+                    ->addInputFilter(
+                        (new FilterDefinitionEntity())
+                            ->setDescription('Titre')
+                            ->setKey('titre')
+                            ->setRequired()
+                    )
+                    ->addOutputFilter(
+                        (new FilterDefinitionEntity())
+                            ->setDescription('Formations')
+                            ->setKey('formations')
+                            ->setRequired()
+                    );
             });
+    }
+
+
+    public function postAction($params)
+    {
+        $newFormation=["titre"=>$params["titre"]];
+        $data=Manager::getService("Formation")->create($newFormation);
+        return [
+            "success"=>$data["success"],
+            "formations"=>$data["data"]
+        ];
     }
 
     public function getAction($params)
