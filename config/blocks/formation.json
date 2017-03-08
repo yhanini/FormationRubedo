@@ -1,0 +1,23 @@
+{
+  "type": "Formation",
+  "description": "Formation",
+  "configBasique": {
+    "title": "Formation",
+    "bType": "formation",
+    "flex": 1,
+    "champsConfig": {
+      "simple": [
+      ],
+      "avance": [
+      ],
+      "csEvents":{
+        "useSearch":null
+      }
+    },
+    "configBloc": {
+    }
+  },
+  "category": "formation",
+  "bType": "formation",
+  "id": "58c0244c6af20d0e008b4569"
+}

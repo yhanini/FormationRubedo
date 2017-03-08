@@ -20,6 +20,10 @@ return array(
            'maxlifeTime' => 60,
            'definitionFile' =>  realpath(__DIR__) . '/blocks/navigation-inverted.json'
        ),
+       'formation' => array(
+           'maxlifeTime' => 60,
+           'definitionFile' =>  realpath(__DIR__) . '/blocks/formation.json'
+       ),
    ),
     'service_manager' => array(
         'invokables' => array(
