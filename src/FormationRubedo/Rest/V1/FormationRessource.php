@@ -1,6 +1,7 @@
 <?php
 namespace FormationRubedo\Rest\V1;
 
+use Rubedo\Services\Manager;
 use RubedoAPI\Entities\API\Definition\FilterDefinitionEntity;
 use RubedoAPI\Entities\API\Definition\VerbDefinitionEntity;
 use RubedoAPI\Rest\V1\AbstractResource;
@@ -32,7 +33,7 @@ class FormationResource extends AbstractResource {
 
     public function getAction($params)
     {
-        $data=Manager::getService("Formations")->getList();
+        $data=Manager::getService("Formation")->getList();
         return [
             "success"=>true,
             "formations"=>$data["data"]
