@@ -8,9 +8,26 @@ return array(
                 'noBootstrap' => true,
                 'css' => array(
                     '/css/bootstrap.min.css',
+                ),
+                'js' => array(
+                    '/js/blockDefinition.js',
                 )
             ),
         )
-   )
+   ),
+   'blocksDefinition' => array(
+       'navigation-inverted' => array(
+           'maxlifeTime' => 60,
+           'definitionFile' =>  realpath(__DIR__) . '/blocks/navigation-inverted.json'
+       ),
+   ),
+    'service_manager' => array(
+        'invokables' => array(
+            'Formation' => 'FormationRubedo\\Collection\\Formation',
+        )
+    ),
+    'namespaces_api' => array(
+        'FormationRubedo',
+    ),
 );
 
